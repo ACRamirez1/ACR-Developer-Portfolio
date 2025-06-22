@@ -302,12 +302,14 @@
       <div class="container">
         <h2>Our Portfolio</h2>
         <div class="portfolio-grid">
-          <div class="portfolio-item">
+          <!-- Honey Child Meals -->
+          <div class="portfolio-item fade-in">
             <div class="portfolio-image">
               <img
                 src="picture-of-homepage.webp"
-                alt="Honey Child Meals Website Homepage"
+                alt="Honey Child Meals E-commerce Platform"
                 class="portfolio-img"
+                onclick="openLightbox(this)"
               />
             </div>
             <div class="portfolio-content">
@@ -317,6 +319,12 @@
                 service, featuring a customer-facing website and a comprehensive
                 admin dashboard for managing orders, menus, and customers.
               </p>
+              <div
+                class="show-more-btn"
+                onclick="openProjectModal('honey-child')"
+              >
+                Show More →
+              </div>
               <div class="portfolio-tags">
                 <span>React</span>
                 <span>Full-Stack</span>
@@ -325,12 +333,15 @@
               </div>
             </div>
           </div>
-          <div class="portfolio-item">
+
+          <!-- Lead Management Dashboard -->
+          <div class="portfolio-item fade-in">
             <div class="portfolio-image">
               <img
                 src="picture-of-dashboard.webp"
-                alt="ACR Developer Lead Management Dashboard"
+                alt="Lead Management Dashboard"
                 class="portfolio-img"
+                onclick="openLightbox(this)"
               />
             </div>
             <div class="portfolio-content">
@@ -340,6 +351,12 @@
                 the website. Features include filtering, sorting, and lead
                 status management to streamline the client acquisition process.
               </p>
+              <div
+                class="show-more-btn"
+                onclick="openProjectModal('lead-dashboard')"
+              >
+                Show More →
+              </div>
               <div class="portfolio-tags">
                 <span>HTML</span>
                 <span>CSS</span>
@@ -348,12 +365,15 @@
               </div>
             </div>
           </div>
-          <div class="portfolio-item">
+
+          <!-- AirTemp Lubbock -->
+          <div class="portfolio-item fade-in">
             <div class="portfolio-image">
               <img
                 src="airtemp-lubbock.webp"
-                alt="AirTemp Lubbock HVAC and Plumbing Website"
+                alt="AirTemp Lubbock HVAC Website"
                 class="portfolio-img"
+                onclick="openLightbox(this)"
               />
             </div>
             <div class="portfolio-content">
@@ -364,6 +384,9 @@
                 a clean design, service details, and a prominent quote request
                 form to capture leads.
               </p>
+              <div class="show-more-btn" onclick="openProjectModal('airtemp')">
+                Show More →
+              </div>
               <div class="portfolio-tags">
                 <span>WordPress</span>
                 <span>Local Business</span>
@@ -372,12 +395,15 @@
               </div>
             </div>
           </div>
-          <div class="portfolio-item">
+
+          <!-- The Socialite Salon Website -->
+          <div class="portfolio-item fade-in">
             <div class="portfolio-image">
               <img
                 src="socialite-salon-homepage.webp"
                 alt="The Socialite Salon Website Homepage"
                 class="portfolio-img"
+                onclick="openLightbox(this)"
               />
             </div>
             <div class="portfolio-content">
@@ -388,6 +414,12 @@
                 easy appointment booking, a team showcase, and online product
                 shopping.
               </p>
+              <div
+                class="show-more-btn"
+                onclick="openProjectModal('socialite-website')"
+              >
+                Show More →
+              </div>
               <div class="portfolio-tags">
                 <span>Webflow</span>
                 <span>Luxury Brand</span>
@@ -396,12 +428,49 @@
               </div>
             </div>
           </div>
-          <div class="portfolio-item">
+
+          <!-- The Socialite Salon Kiosk -->
+          <div class="portfolio-item fade-in">
+            <div class="portfolio-image">
+              <img
+                src="salon.webp"
+                alt="The Socialite Salon Kiosk"
+                class="portfolio-img"
+                onclick="openLightbox(this)"
+              />
+            </div>
+            <div class="portfolio-content">
+              <h3>The Socialite Salon - Kiosk</h3>
+              <p>
+                A React and TypeScript component for a salon kiosk, allowing
+                clients to select and check-in with their stylist. Designed for
+                tablets, it features real-time status updates and a responsive,
+                touch-friendly UI.
+              </p>
+              <div
+                class="show-more-btn"
+                onclick="openProjectModal('socialite-kiosk')"
+              >
+                Show More →
+              </div>
+              <div class="portfolio-tags">
+                <span>React</span>
+                <span>TypeScript</span>
+                <span>Kiosk</span>
+                <span>UI/UX</span>
+                <span>Responsive Design</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Easy Thoughts -->
+          <div class="portfolio-item fade-in">
             <div class="portfolio-image">
               <img
                 src="easy-thoughts-homepage.webp"
                 alt="Easy Thoughts Mental Health Website"
                 class="portfolio-img"
+                onclick="openLightbox(this)"
               />
             </div>
             <div class="portfolio-content">
@@ -411,6 +480,12 @@
                 featuring innovative services, a professional blog, and a
                 podcast. Designed to be a welcoming, supportive online space.
               </p>
+              <div
+                class="show-more-btn"
+                onclick="openProjectModal('easy-thoughts')"
+              >
+                Show More →
+              </div>
               <div class="portfolio-tags">
                 <span>WordPress</span>
                 <span>Healthcare</span>
@@ -419,50 +494,67 @@
               </div>
             </div>
           </div>
-          <div class="portfolio-item">
+
+          <!-- Lubbock Small Business App -->
+          <div class="portfolio-item fade-in">
             <div class="portfolio-image">
               <img
                 src="lbk-small-business-app.webp"
                 alt="Lubbock Small Business App"
                 class="portfolio-img"
+                onclick="openLightbox(this)"
               />
             </div>
             <div class="portfolio-content">
               <h3>Lubbock Small Business App</h3>
               <p>
-                A full-stack business directory for local businesses, built with
-                React and Redux. Features CRUD functionality and an interactive
-                Google Maps integration for multi-business viewing and
-                geocoding.
+                A comprehensive React and Redux application featuring a business
+                directory with Google Maps integration, user authentication, and
+                full CRUD operations for business listings.
               </p>
+              <div
+                class="show-more-btn"
+                onclick="openProjectModal('lbk-business')"
+              >
+                Show More →
+              </div>
               <div class="portfolio-tags">
                 <span>React</span>
                 <span>Redux</span>
-                <span>Google Maps API</span>
-                <span>Full-Stack</span>
+                <span>Google Maps</span>
+                <span>CRUD</span>
               </div>
             </div>
           </div>
-          <div class="portfolio-item">
+
+          <!-- Music App -->
+          <div class="portfolio-item fade-in">
             <div class="portfolio-image">
               <img
                 src="music-app.webp"
-                alt="React Music App Dashboard"
+                alt="Music Dashboard App"
                 class="portfolio-img"
+                onclick="openLightbox(this)"
               />
             </div>
             <div class="portfolio-content">
-              <h3>Music App - React Dashboard</h3>
+              <h3>Music Dashboard App</h3>
               <p>
-                A modern, interactive music dashboard built with React and
-                Material-UI. Features a user authentication system, interactive
-                audio controls, and a smart notification system.
+                A sleek React dashboard application built with Material-UI,
+                featuring user authentication, audio controls, and notification
+                systems for an enhanced music management experience.
               </p>
+              <div
+                class="show-more-btn"
+                onclick="openProjectModal('music-app')"
+              >
+                Show More →
+              </div>
               <div class="portfolio-tags">
                 <span>React</span>
                 <span>Material-UI</span>
-                <span>Redux</span>
-                <span>State Management</span>
+                <span>Dashboard</span>
+                <span>Audio</span>
               </div>
             </div>
           </div>
@@ -633,13 +725,12 @@
     </section>
 
     <!-- Booking Section -->
-    <section id="booking" class="booking">
+    <section class="booking" id="booking">
       <div class="container">
         <h2>Ready to Start Your Project?</h2>
         <p>
-          The first step is a conversation. Schedule a free, no-obligation
-          30-minute consultation directly on my calendar below. Let's discuss
-          your vision and how I can help bring it to life.
+          Let's discuss your vision and create something amazing together. Book
+          a free consultation to get started on your digital transformation.
         </p>
         <!-- Calendly inline widget begin -->
         <div
@@ -655,6 +746,624 @@
         <!-- Calendly inline widget end -->
       </div>
     </section>
+
+    <!-- Project Detail Modals -->
+    <!-- Honey Child Meals Modal -->
+    <div id="honey-child-modal" class="project-modal">
+      <div class="project-modal-content">
+        <div class="project-modal-header">
+          <span
+            class="project-modal-close"
+            onclick="closeProjectModal('honey-child')"
+            >&times;</span
+          >
+          <h2>Honey Child Meals - E-commerce Platform</h2>
+          <div class="project-tags">
+            <span>React</span>
+            <span>Full-Stack</span>
+            <span>E-commerce</span>
+            <span>Dashboard</span>
+          </div>
+        </div>
+        <div class="project-modal-body">
+          <h3>Project Overview</h3>
+          <p>
+            A comprehensive full-stack e-commerce and delivery platform built
+            for a local meal service. This project showcases modern web
+            development practices with both customer-facing and administrative
+            interfaces.
+          </p>
+
+          <div class="project-features">
+            <div class="feature-item">
+              <h4>Customer Website</h4>
+              <p>
+                User-friendly interface for browsing meals, placing orders, and
+                managing accounts with responsive design.
+              </p>
+            </div>
+            <div class="feature-item">
+              <h4>Admin Dashboard</h4>
+              <p>
+                Comprehensive management system for orders, menus, customers,
+                and business analytics.
+              </p>
+            </div>
+            <div class="feature-item">
+              <h4>Order Management</h4>
+              <p>
+                Real-time order tracking, status updates, and delivery
+                coordination system.
+              </p>
+            </div>
+            <div class="feature-item">
+              <h4>Menu Management</h4>
+              <p>
+                Dynamic menu system with pricing, availability, and nutritional
+                information management.
+              </p>
+            </div>
+          </div>
+
+          <h3>Technical Implementation</h3>
+          <ul>
+            <li>
+              Built with React for dynamic user interfaces and component
+              reusability
+            </li>
+            <li>Full-stack architecture with secure backend API integration</li>
+            <li>Responsive design optimized for desktop and mobile devices</li>
+            <li>
+              Real-time data synchronization between customer and admin
+              interfaces
+            </li>
+            <li>Secure payment processing and order management workflows</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lead Dashboard Modal -->
+    <div id="lead-dashboard-modal" class="project-modal">
+      <div class="project-modal-content">
+        <div class="project-modal-header">
+          <span
+            class="project-modal-close"
+            onclick="closeProjectModal('lead-dashboard')"
+            >&times;</span
+          >
+          <h2>Lead Management Dashboard</h2>
+          <div class="project-tags">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>Lead Management</span>
+          </div>
+        </div>
+        <div class="project-modal-body">
+          <h3>Project Overview</h3>
+          <p>
+            A custom-built dashboard solution designed to streamline the lead
+            management process for ACR Developer. This tool transforms raw
+            website inquiries into organized, actionable business opportunities.
+          </p>
+
+          <div class="project-features">
+            <div class="feature-item">
+              <h4>Lead Filtering</h4>
+              <p>
+                Advanced filtering system to sort leads by status, date, source,
+                and priority level.
+              </p>
+            </div>
+            <div class="feature-item">
+              <h4>Status Management</h4>
+              <p>
+                Visual status tracking from initial contact through project
+                completion.
+              </p>
+            </div>
+            <div class="feature-item">
+              <h4>Data Organization</h4>
+              <p>
+                Clean, intuitive interface for viewing and managing client
+                information and project details.
+              </p>
+            </div>
+            <div class="feature-item">
+              <h4>Analytics</h4>
+              <p>
+                Built-in reporting features to track conversion rates and
+                business growth metrics.
+              </p>
+            </div>
+          </div>
+
+          <h3>Technical Implementation</h3>
+          <ul>
+            <li>
+              Pure HTML, CSS, and JavaScript for optimal performance and
+              compatibility
+            </li>
+            <li>Responsive design that works seamlessly across all devices</li>
+            <li>Local storage integration for persistent data management</li>
+            <li>Interactive sorting and filtering capabilities</li>
+            <li>Clean, professional UI design focused on productivity</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- AirTemp Modal -->
+    <div id="airtemp-modal" class="project-modal">
+      <div class="project-modal-content">
+        <div class="project-modal-header">
+          <span
+            class="project-modal-close"
+            onclick="closeProjectModal('airtemp')"
+            >&times;</span
+          >
+          <h2>AirTemp Lubbock - HVAC & Plumbing</h2>
+          <div class="project-tags">
+            <span>WordPress</span>
+            <span>Local Business</span>
+            <span>HVAC</span>
+            <span>Plumbing</span>
+          </div>
+        </div>
+        <div class="project-modal-body">
+          <h3>Project Overview</h3>
+          <p>
+            A professional WordPress website for AirTemp Lubbock, a trusted HVAC
+            and plumbing company serving the Lubbock area since 1993. The site
+            combines modern design with practical functionality to generate
+            leads and showcase services.
+          </p>
+
+          <div class="project-features">
+            <div class="feature-item">
+              <h4>Service Showcase</h4>
+              <p>
+                Comprehensive service pages detailing HVAC installation, repair,
+                and plumbing services.
+              </p>
+            </div>
+            <div class="feature-item">
+              <h4>Lead Generation</h4>
+              <p>
+                Prominent quote request forms and contact options strategically
+                placed throughout the site.
+              </p>
+            </div>
+            <div class="feature-item">
+              <h4>Local SEO</h4>
+              <p>
+                Optimized for local search results to capture customers in the
+                Lubbock area.
+              </p>
+            </div>
+            <div class="feature-item">
+              <h4>Mobile Responsive</h4>
+              <p>
+                Fully responsive design ensuring great user experience on all
+                devices.
+              </p>
+            </div>
+          </div>
+
+          <h3>Technical Implementation</h3>
+          <ul>
+            <li>WordPress CMS for easy content management and updates</li>
+            <li>Custom theme development tailored to the HVAC industry</li>
+            <li>Local SEO optimization for improved search visibility</li>
+            <li>Contact forms integrated with business workflow</li>
+            <li>Professional photography integration and image optimization</li>
+            <li>Fast loading times and performance optimization</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Socialite Website Modal -->
+    <div id="socialite-website-modal" class="project-modal">
+      <div class="project-modal-content">
+        <div class="project-modal-header">
+          <span
+            class="project-modal-close"
+            onclick="closeProjectModal('socialite-website')"
+            >&times;</span
+          >
+          <h2>The Socialite Salon - Luxury Website</h2>
+          <div class="project-tags">
+            <span>Webflow</span>
+            <span>Luxury Brand</span>
+            <span>E-commerce</span>
+            <span>Booking</span>
+          </div>
+        </div>
+        <div class="project-modal-body">
+          <h3>Project Overview</h3>
+          <p>
+            A luxurious and sophisticated website for The Socialite Salon, an
+            award-nominated beauty destination in Lubbock. The design mirrors
+            the salon's elegant decor and provides a seamless online experience
+            for clients.
+          </p>
+
+          <div class="project-features">
+            <div class="feature-item">
+              <h4>Luxury Design</h4>
+              <p>
+                Elegant visual design that reflects the salon's high-end
+                atmosphere and attention to detail.
+              </p>
+            </div>
+            <div class="feature-item">
+              <h4>Online Booking</h4>
+              <p>
+                Integrated appointment scheduling system for seamless client
+                booking experience.
+              </p>
+            </div>
+            <div class="feature-item">
+              <h4>Team Showcase</h4>
+              <p>
+                Professional stylist profiles highlighting expertise and
+                specializations.
+              </p>
+            </div>
+            <div class="feature-item">
+              <h4>Product Sales</h4>
+              <p>
+                E-commerce functionality for selling professional hair care
+                products online.
+              </p>
+            </div>
+          </div>
+
+          <h3>Technical Implementation</h3>
+          <ul>
+            <li>
+              Built on Webflow for design flexibility and easy content
+              management
+            </li>
+            <li>
+              Responsive design optimized for all devices and screen sizes
+            </li>
+            <li>Integrated booking system for appointment management</li>
+            <li>E-commerce functionality for product sales</li>
+            <li>Professional photography integration and gallery features</li>
+            <li>SEO optimization for local beauty industry searches</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Socialite Kiosk Modal -->
+    <div id="socialite-kiosk-modal" class="project-modal">
+      <div class="project-modal-content">
+        <div class="project-modal-header">
+          <span
+            class="project-modal-close"
+            onclick="closeProjectModal('socialite-kiosk')"
+            >&times;</span
+          >
+          <h2>The Socialite Salon - Kiosk System</h2>
+          <div class="project-tags">
+            <span>React</span>
+            <span>TypeScript</span>
+            <span>Kiosk</span>
+            <span>UI/UX</span>
+            <span>Responsive Design</span>
+          </div>
+        </div>
+        <div class="project-modal-body">
+          <h3>Project Overview</h3>
+          <p>
+            An advanced React TypeScript component designed for salon kiosk
+            applications, allowing clients to seamlessly select and check-in
+            with their preferred stylist. Optimized specifically for iPad/tablet
+            interfaces with modern, touch-friendly UI.
+          </p>
+
+          <div class="project-features">
+            <div class="feature-item">
+              <h4>Stylist Selection</h4>
+              <p>
+                Interactive stylist cards with profile images, names, and
+                real-time availability status.
+              </p>
+            </div>
+            <div class="feature-item">
+              <h4>Confirmation System</h4>
+              <p>
+                Two-step confirmation process prevents accidental check-ins with
+                user-friendly dialogs.
+              </p>
+            </div>
+            <div class="feature-item">
+              <h4>Tablet Optimized</h4>
+              <p>
+                iPad-optimized layout with fixed positioning and touch-friendly
+                elements.
+              </p>
+            </div>
+            <div class="feature-item">
+              <h4>Real-time Updates</h4>
+              <p>
+                Live status indicators showing stylist availability with visual
+                feedback.
+              </p>
+            </div>
+          </div>
+
+          <h3>Technical Architecture</h3>
+          <ul>
+            <li>
+              React 18 with TypeScript for type safety and modern development
+              practices
+            </li>
+            <li>Custom API service layer for seamless backend communication</li>
+            <li>Inline CSS-in-JS for dynamic styling and responsive design</li>
+            <li>
+              Local state management using React hooks for optimal performance
+            </li>
+            <li>
+              Image loading states with fallback initials for missing photos
+            </li>
+            <li>
+              Error handling and loading states with appropriate UI feedback
+            </li>
+            <li>
+              Accessibility features including keyboard navigation and screen
+              reader support
+            </li>
+          </ul>
+
+          <h3>Key Features</h3>
+          <ul>
+            <li>Dynamic image handling with fallbacks and loading states</li>
+            <li>
+              Confirmation dialog pattern for preventing accidental interactions
+            </li>
+            <li>Responsive styling system optimized for tablet interfaces</li>
+            <li>
+              Performance optimizations including lazy loading and memoized
+              components
+            </li>
+            <li>
+              Comprehensive error handling and user experience optimization
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Easy Thoughts Modal -->
+    <div id="easy-thoughts-modal" class="project-modal">
+      <div class="project-modal-content">
+        <div class="project-modal-header">
+          <span
+            class="project-modal-close"
+            onclick="closeProjectModal('easy-thoughts')"
+            >&times;</span
+          >
+          <h2>Easy Thoughts - Mental Health Services</h2>
+          <div class="project-tags">
+            <span>WordPress</span>
+            <span>Healthcare</span>
+            <span>Blog</span>
+            <span>Podcast</span>
+          </div>
+        </div>
+        <div class="project-modal-body">
+          <h3>Project Overview</h3>
+          <p>
+            A comprehensive website for Easy Thoughts, a West Texas mental
+            health practice focused on providing innovative and accessible
+            mental health services. The site creates a welcoming, supportive
+            online space for clients seeking mental health resources.
+          </p>
+
+          <div class="project-features">
+            <div class="feature-item">
+              <h4>Service Information</h4>
+              <p>
+                Detailed service pages explaining therapeutic approaches and
+                treatment options.
+              </p>
+            </div>
+            <div class="feature-item">
+              <h4>Professional Blog</h4>
+              <p>
+                Regular blog content providing mental health insights, tips, and
+                educational resources.
+              </p>
+            </div>
+            <div class="feature-item">
+              <h4>Podcast Integration</h4>
+              <p>
+                Embedded podcast episodes discussing mental health topics and
+                community wellness.
+              </p>
+            </div>
+            <div class="feature-item">
+              <h4>Welcoming Design</h4>
+              <p>
+                Calming, professional design that creates a safe and supportive
+                online environment.
+              </p>
+            </div>
+          </div>
+
+          <h3>Technical Implementation</h3>
+          <ul>
+            <li>
+              WordPress CMS for flexible content management and blog
+              functionality
+            </li>
+            <li>
+              Custom theme development focused on healthcare industry needs
+            </li>
+            <li>
+              Podcast integration with audio player and episode management
+            </li>
+            <li>SEO optimization for mental health service searches</li>
+            <li>Accessibility features ensuring inclusive user experience</li>
+            <li>HIPAA-compliant contact forms and privacy considerations</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- LBK Business Modal -->
+    <div id="lbk-business-modal" class="project-modal">
+      <div class="project-modal-content">
+        <div class="project-modal-header">
+          <span
+            class="project-modal-close"
+            onclick="closeProjectModal('lbk-business')"
+            >&times;</span
+          >
+          <h2>Lubbock Small Business App</h2>
+          <div class="project-tags">
+            <span>React</span>
+            <span>Redux</span>
+            <span>Google Maps</span>
+            <span>CRUD</span>
+          </div>
+        </div>
+        <div class="project-modal-body">
+          <h3>Project Overview</h3>
+          <p>
+            A comprehensive React and Redux application featuring a business
+            directory with Google Maps integration, user authentication, and
+            full CRUD operations for business listings. Designed to support
+            local Lubbock businesses with modern web technology.
+          </p>
+
+          <div class="project-features">
+            <div class="feature-item">
+              <h4>Business Directory</h4>
+              <p>
+                Comprehensive listing system with detailed business information
+                and categorization.
+              </p>
+            </div>
+            <div class="feature-item">
+              <h4>Google Maps Integration</h4>
+              <p>
+                Interactive maps with multi-business viewing, geocoding, and
+                location services.
+              </p>
+            </div>
+            <div class="feature-item">
+              <h4>User Authentication</h4>
+              <p>
+                Secure user registration and login system for business owners
+                and customers.
+              </p>
+            </div>
+            <div class="feature-item">
+              <h4>CRUD Operations</h4>
+              <p>
+                Full create, read, update, and delete functionality for business
+                listings.
+              </p>
+            </div>
+          </div>
+
+          <h3>Technical Implementation</h3>
+          <ul>
+            <li>
+              React for component-based architecture and dynamic user interfaces
+            </li>
+            <li>Redux for centralized state management and data flow</li>
+            <li>
+              Google Maps API integration for location services and mapping
+            </li>
+            <li>Full-stack development with secure backend API</li>
+            <li>Responsive design optimized for desktop and mobile devices</li>
+            <li>User authentication and authorization systems</li>
+            <li>Database integration for persistent business data storage</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Music App Modal -->
+    <div id="music-app-modal" class="project-modal">
+      <div class="project-modal-content">
+        <div class="project-modal-header">
+          <span
+            class="project-modal-close"
+            onclick="closeProjectModal('music-app')"
+            >&times;</span
+          >
+          <h2>Music Dashboard App</h2>
+          <div class="project-tags">
+            <span>React</span>
+            <span>Material-UI</span>
+            <span>Dashboard</span>
+            <span>Audio</span>
+          </div>
+        </div>
+        <div class="project-modal-body">
+          <h3>Project Overview</h3>
+          <p>
+            A sleek React dashboard application built with Material-UI,
+            featuring user authentication, interactive audio controls, and
+            notification systems for an enhanced music management experience.
+            Demonstrates modern UI/UX principles and advanced React development.
+          </p>
+
+          <div class="project-features">
+            <div class="feature-item">
+              <h4>User Authentication</h4>
+              <p>
+                Secure login system with user session management and protected
+                routes.
+              </p>
+            </div>
+            <div class="feature-item">
+              <h4>Audio Controls</h4>
+              <p>
+                Interactive music player with play, pause, skip, and volume
+                control functionality.
+              </p>
+            </div>
+            <div class="feature-item">
+              <h4>Material-UI Design</h4>
+              <p>
+                Modern, responsive interface built with Google's Material Design
+                principles.
+              </p>
+            </div>
+            <div class="feature-item">
+              <h4>Notification System</h4>
+              <p>
+                Smart notification system for user feedback and system status
+                updates.
+              </p>
+            </div>
+          </div>
+
+          <h3>Technical Implementation</h3>
+          <ul>
+            <li>
+              React with hooks for modern component development and state
+              management
+            </li>
+            <li>Material-UI for consistent, professional design components</li>
+            <li>Audio API integration for music playback functionality</li>
+            <li>Responsive design optimized for various screen sizes</li>
+            <li>User authentication with secure session management</li>
+            <li>Real-time notifications and user feedback systems</li>
+            <li>Component-based architecture for maintainable code</li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
     <!-- Image Lightbox/Modal -->
     <div id="image-lightbox" class="lightbox">

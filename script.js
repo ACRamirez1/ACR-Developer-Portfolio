@@ -357,3 +357,44 @@ window.trackEvent = trackEvent;
 // Run animations on scroll
 window.addEventListener("scroll", checkAndAnimate);
 window.addEventListener("load", checkAndAnimate);
+
+// Project Modal Functions
+function openProjectModal(projectId) {
+  const modal = document.getElementById(projectId + "-modal");
+  if (modal) {
+    modal.style.display = "block";
+    document.body.style.overflow = "hidden"; // Prevent background scrolling
+  }
+}
+
+function closeProjectModal(projectId) {
+  const modal = document.getElementById(projectId + "-modal");
+  if (modal) {
+    modal.style.display = "none";
+    document.body.style.overflow = "auto"; // Restore scrolling
+  }
+}
+
+// Close modal when clicking outside of it
+window.addEventListener("click", function (event) {
+  const modals = document.querySelectorAll(".project-modal");
+  modals.forEach((modal) => {
+    if (event.target === modal) {
+      modal.style.display = "none";
+      document.body.style.overflow = "auto";
+    }
+  });
+});
+
+// Close modal with Escape key
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") {
+    const modals = document.querySelectorAll(".project-modal");
+    modals.forEach((modal) => {
+      if (modal.style.display === "block") {
+        modal.style.display = "none";
+        document.body.style.overflow = "auto";
+      }
+    });
+  }
+});
