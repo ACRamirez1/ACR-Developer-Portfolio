@@ -41,194 +41,66 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// Lead Management System
-class LeadManager {
-  constructor() {
-    this.leads = JSON.parse(localStorage.getItem("acr_leads")) || [];
-    this.init();
-  }
+// Handle Contact Form Submission
+document.addEventListener("DOMContentLoaded", () => {
+  const contactForm = document.getElementById("leadForm");
+  console.log("Form found:", contactForm); // Debug log
 
-  init() {
-    this.setupFormHandling();
-    this.displayLeads();
-  }
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      console.log("Form submitted!"); // Debug log
 
-  setupFormHandling() {
-    const form = document.getElementById("leadForm");
-    if (form) {
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        this.handleFormSubmission(e.target);
-      });
-    }
-  }
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const company = document.getElementById("company").value;
+      const service = document.getElementById("service").value;
+      const message = document.getElementById("message").value;
 
-  handleFormSubmission(form) {
-    const formData = new FormData(form);
-    const lead = {
-      id: Date.now(),
-      name: formData.get("name"),
-      email: formData.get("email"),
-      company: formData.get("company"),
-      service: formData.get("service"),
-      message: formData.get("message"),
-      status: "new",
-      date: new Date().toISOString(),
-      source: "website",
-    };
+      console.log("Form data:", { name, email, company, service, message }); // Debug log
 
-    this.addLead(lead);
-    this.showSuccessMessage("Thank you! We'll get back to you soon.");
-    form.reset();
-  }
+      const newLead = {
+        id: `lead_${new Date().getTime()}`,
+        name: name,
+        email: email,
+        company: company,
+        service: service,
+        message: message,
+        date: new Date().toISOString(),
+        status: "New",
+      };
 
-  addLead(lead) {
-    this.leads.unshift(lead);
-    this.saveLeads();
-    this.displayLeads();
-    this.sendNotification(lead);
-  }
+      const leads = JSON.parse(localStorage.getItem("leads")) || [];
+      leads.push(newLead);
+      localStorage.setItem("leads", JSON.stringify(leads));
+      console.log("Lead saved to localStorage:", newLead); // Debug log
 
-  saveLeads() {
-    localStorage.setItem("acr_leads", JSON.stringify(this.leads));
-  }
+      // Show success message - create element if it doesn't exist
+      let formFeedback = document.getElementById("form-feedback");
+      if (!formFeedback) {
+        formFeedback = document.createElement("div");
+        formFeedback.id = "form-feedback";
+        formFeedback.style.cssText =
+          "color: green; margin-top: 10px; font-weight: bold;";
+        contactForm.appendChild(formFeedback);
+      }
 
-  displayLeads() {
-    const leadsContainer = document.getElementById("leadsContainer");
-    if (!leadsContainer) return;
+      formFeedback.textContent =
+        "Thank you for your message! We will get back to you soon.";
+      formFeedback.style.display = "block";
 
-    if (this.leads.length === 0) {
-      leadsContainer.innerHTML =
-        '<p class="no-leads">No leads yet. Start promoting your website!</p>';
-      return;
-    }
+      // Clear the form
+      contactForm.reset();
 
-    const leadsHTML = this.leads
-      .map(
-        (lead) => `
-            <div class="lead-card ${lead.status}">
-                <div class="lead-header">
-                    <h4>${lead.name}</h4>
-                    <span class="lead-status ${lead.status}">${
-          lead.status
-        }</span>
-                </div>
-                <div class="lead-details">
-                    <p><strong>Email:</strong> ${lead.email}</p>
-                    <p><strong>Company:</strong> ${lead.company || "N/A"}</p>
-                    <p><strong>Service:</strong> ${lead.service}</p>
-                    <p><strong>Date:</strong> ${new Date(
-                      lead.date
-                    ).toLocaleDateString()}</p>
-                    <p><strong>Message:</strong> ${lead.message}</p>
-                </div>
-                <div class="lead-actions">
-                    <button onclick="leadManager.updateLeadStatus(${
-                      lead.id
-                    }, 'contacted')" class="btn btn-small">Mark Contacted</button>
-                    <button onclick="leadManager.updateLeadStatus(${
-                      lead.id
-                    }, 'qualified')" class="btn btn-small">Mark Qualified</button>
-                    <button onclick="leadManager.deleteLead(${
-                      lead.id
-                    })" class="btn btn-small btn-danger">Delete</button>
-                </div>
-            </div>
-        `
-      )
-      .join("");
-
-    leadsContainer.innerHTML = leadsHTML;
-  }
-
-  updateLeadStatus(leadId, status) {
-    const lead = this.leads.find((l) => l.id === leadId);
-    if (lead) {
-      lead.status = status;
-      this.saveLeads();
-      this.displayLeads();
-    }
-  }
-
-  deleteLead(leadId) {
-    if (confirm("Are you sure you want to delete this lead?")) {
-      this.leads = this.leads.filter((l) => l.id !== leadId);
-      this.saveLeads();
-      this.displayLeads();
-    }
-  }
-
-  sendNotification(lead) {
-    // In a real implementation, this would send an email or notification
-    console.log("New lead received:", lead);
-
-    // You could integrate with services like:
-    // - EmailJS for email notifications
-    // - Slack webhooks for team notifications
-    // - CRM systems like HubSpot or Salesforce
-  }
-
-  showSuccessMessage(message) {
-    const form = document.getElementById("leadForm");
-    const existingMessage = form.querySelector(".success-message");
-    if (existingMessage) {
-      existingMessage.remove();
-    }
-
-    const successDiv = document.createElement("div");
-    successDiv.className = "success-message";
-    successDiv.textContent = message;
-    form.insertBefore(successDiv, form.firstChild);
-
-    setTimeout(() => {
-      successDiv.remove();
-    }, 5000);
-  }
-
-  exportLeads() {
-    const csvContent = this.convertToCSV(this.leads);
-    const blob = new Blob([csvContent], { type: "text/csv" });
-    const url = window.URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = `acr-leads-${new Date().toISOString().split("T")[0]}.csv`;
-    a.click();
-    window.URL.revokeObjectURL(url);
-  }
-
-  convertToCSV(leads) {
-    const headers = [
-      "Name",
-      "Email",
-      "Company",
-      "Service",
-      "Message",
-      "Status",
-      "Date",
-      "Source",
-    ];
-    const csvRows = [headers.join(",")];
-
-    leads.forEach((lead) => {
-      const row = [
-        `"${lead.name}"`,
-        `"${lead.email}"`,
-        `"${lead.company || ""}"`,
-        `"${lead.service}"`,
-        `"${lead.message.replace(/"/g, '""')}"`,
-        `"${lead.status}"`,
-        `"${lead.date}"`,
-        `"${lead.source}"`,
-      ];
-      csvRows.push(row.join(","));
+      // Hide the success message after 5 seconds
+      setTimeout(() => {
+        formFeedback.style.display = "none";
+      }, 5000);
     });
-
-    return csvRows.join("\n");
+  } else {
+    console.error("Form with ID 'leadForm' not found!"); // Debug log
   }
-}
-
-// Initialize Lead Manager
-const leadManager = new LeadManager();
+});
 
 // Animation on scroll
 const observerOptions = {
@@ -350,14 +222,6 @@ document.addEventListener("DOMContentLoaded", () => {
   document.head.appendChild(script);
 });
 
-// Export functions for global access
-window.leadManager = leadManager;
-window.trackEvent = trackEvent;
-
-// Run animations on scroll
-window.addEventListener("scroll", checkAndAnimate);
-window.addEventListener("load", checkAndAnimate);
-
 // Project Modal Functions
 function openProjectModal(projectId) {
   const modal = document.getElementById(projectId + "-modal");
@@ -368,11 +232,8 @@ function openProjectModal(projectId) {
 }
 
 function closeProjectModal(projectId) {
-  const modal = document.getElementById(projectId + "-modal");
-  if (modal) {
-    modal.style.display = "none";
-    document.body.style.overflow = "auto"; // Restore scrolling
-  }
+  const modal = document.getElementById(`modal-${projectId}`);
+  modal.style.display = "none";
 }
 
 // Close modal when clicking outside of it
@@ -398,3 +259,6 @@ document.addEventListener("keydown", function (event) {
     });
   }
 });
+
+// Export functions for global access
+window.trackEvent = trackEvent;
