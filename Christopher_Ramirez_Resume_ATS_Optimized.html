@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Christopher Adam Ramirez - Full Stack Developer Resume</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background: #f5f5f5;
+      }
+
+      .resume-container {
+        max-width: 850px;
+        margin: 20px auto;
+        background: white;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .header {
+        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        color: white;
+        padding: 40px;
+        text-align: center;
+      }
+
+      .header h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+        font-weight: 700;
+      }
+
+      .header h2 {
+        font-size: 1.3em;
+        margin-bottom: 20px;
+        font-weight: 400;
+        opacity: 0.9;
+      }
+
+      .contact-info {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-top: 20px;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .contact-item a {
+        color: white;
+        text-decoration: none;
+      }
+
+      .contact-item a:hover {
+        text-decoration: underline;
+      }
+
+      .content {
+        padding: 40px;
+      }
+
+      .section {
+        margin-bottom: 30px;
+      }
+
+      .section-title {
+        font-size: 1.4em;
+        font-weight: 700;
+        color: #1e3c72;
+        border-bottom: 2px solid #1e3c72;
+        padding-bottom: 8px;
+        margin-bottom: 20px;
+      }
+
+      .job {
+        margin-bottom: 25px;
+      }
+
+      .job-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 8px;
+      }
+
+      .job-title {
+        font-weight: 700;
+        font-size: 1.1em;
+        color: #1e3c72;
+      }
+
+      .job-company {
+        font-weight: 600;
+        color: #555;
+      }
+
+      .job-date {
+        color: #666;
+        font-size: 0.9em;
+      }
+
+      .job-description {
+        margin-bottom: 10px;
+        color: #555;
+      }
+
+      .job-achievements {
+        list-style: none;
+        padding-left: 20px;
+      }
+
+      .job-achievements li {
+        position: relative;
+        margin-bottom: 6px;
+        color: #555;
+      }
+
+      .job-achievements li:before {
+        content: "•";
+        color: #1e3c72;
+        font-weight: bold;
+        position: absolute;
+        left: -15px;
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+        margin-top: 15px;
+      }
+
+      .skill-category {
+        background: #f8f9fa;
+        padding: 15px;
+        border-radius: 6px;
+        border-left: 4px solid #1e3c72;
+      }
+
+      .skill-category h4 {
+        color: #1e3c72;
+        margin-bottom: 8px;
+        font-size: 1em;
+      }
+
+      .skill-list {
+        list-style: none;
+        color: #555;
+      }
+
+      .skill-list li {
+        margin-bottom: 3px;
+      }
+
+      .project {
+        margin-bottom: 20px;
+        padding: 15px;
+        background: #f8f9fa;
+        border-radius: 6px;
+        border-left: 4px solid #1e3c72;
+      }
+
+      .project-title {
+        font-weight: 700;
+        color: #1e3c72;
+        margin-bottom: 5px;
+      }
+
+      .project-tech {
+        color: #666;
+        font-size: 0.9em;
+        margin-bottom: 8px;
+      }
+
+      .project-description {
+        color: #555;
+        line-height: 1.5;
+      }
+
+      .education {
+        margin-bottom: 20px;
+      }
+
+      .education-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 5px;
+      }
+
+      .education-degree {
+        font-weight: 700;
+        color: #1e3c72;
+      }
+
+      .education-school {
+        font-weight: 600;
+        color: #555;
+      }
+
+      .education-date {
+        color: #666;
+        font-size: 0.9em;
+      }
+
+      @media print {
+        body {
+          background: white;
+        }
+        .resume-container {
+          box-shadow: none;
+          margin: 0;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .header {
+          padding: 30px 20px;
+        }
+        .content {
+          padding: 30px 20px;
+        }
+        .contact-info {
+          flex-direction: column;
+          gap: 10px;
+        }
+        .job-header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 5px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="resume-container">
+      <div class="header">
+        <h1>Christopher Adam Ramirez</h1>
+        <h2>Full Stack Developer</h2>
+        <div class="contact-info">
+          <div class="contact-item">
+            <span>📧</span>
+            <a href="mailto:chrisramirez@acr-developer.com"
+              >chrisramirez@acr-developer.com</a
+            >
+          </div>
+          <div class="contact-item">
+            <span>📱</span>
+            <a href="tel:806-776-2691">806-776-2691</a>
+          </div>
+          <div class="contact-item">
+            <span>🌐</span>
+            <a href="https://theacrdeveloper.com" target="_blank"
+              >theacrdeveloper.com</a
+            >
+          </div>
+          <div class="contact-item">
+            <span>📍</span>
+            <span>Lubbock, Texas</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="section">
+          <h3 class="section-title">Professional Summary</h3>
+          <p>
+            Full Stack Developer with 2+ years of experience in modern
+            web technologies, specializing in JavaScript, React, and Node.js.
+            Passionate about learning new technologies and contributing to team
+            projects. Experience includes frontend development, API integration,
+            and building responsive web applications. Seeking opportunities to
+            grow skills and contribute to innovative development teams.
+          </p>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Professional Experience</h3>
+
+          <div class="job">
+            <div class="job-header">
+              <div>
+                <span class="job-title">Frontend Developer</span>
+                <span class="job-company">- Your Speak - Startup Social Media Company</span>
+              </div>
+              <span class="job-date">April 2025 - Present</span>
+            </div>
+            <div class="job-description">
+              Member of the frontend development team for a startup social media
+              platform, contributing to messenger application features and user
+              interface improvements.
+            </div>
+            <ul class="job-achievements">
+              <li>
+                Developed React components for messenger application under
+                senior developer guidance
+              </li>
+              <li>
+                Collaborated with backend team on API integration and real-time
+                messaging features
+              </li>
+              <li>
+                Assisted in implementing responsive design patterns and
+                optimizing application performance
+              </li>
+              <li>
+                Worked with JavaScript frameworks and learned state management
+                solutions
+              </li>
+              <li>
+                Gained exposure to PostgreSQL, Elasticsearch, and Oracle for
+                data management
+              </li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <div class="job-header">
+              <div>
+                <span class="job-title">Independent Contractor</span>
+                <span class="job-company">- ACR Developer</span>
+              </div>
+              <span class="job-date">January 2024 - Present</span>
+            </div>
+            <div class="job-description">
+              Freelance web development services for small businesses and
+              individuals, focusing on frontend development and basic full-stack
+              solutions.
+            </div>
+            <ul class="job-achievements">
+              <li>
+                Completed 8+ client projects including business websites and
+                simple web applications
+              </li>
+              <li>
+                Developed frontend applications using React, JavaScript, and
+                modern CSS frameworks
+              </li>
+              <li>
+                Implemented basic payment processing with Stripe integration and
+                user authentication
+              </li>
+              <li>
+                Created responsive, mobile-friendly websites with modern design
+                principles
+              </li>
+              <li>
+                Built client relationships and managed project delivery with
+                positive feedback
+              </li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <div class="job-header">
+              <div>
+                <span class="job-title">Contract Developer</span>
+                <span class="job-company">- Wundertre</span>
+              </div>
+              <span class="job-date">December 2024 - January 2025</span>
+            </div>
+            <div class="job-description">
+              Contracted development services, contributing to various aspects
+              of their technology platform.
+            </div>
+            <ul class="job-achievements">
+              <li>
+                Assisted development team with frontend feature implementations
+                and bug fixes
+              </li>
+              <li>
+                Participated in code reviews and learned from senior developers
+              </li>
+              <li>
+                Contributed to documentation and helped maintain code quality
+                standards
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Key Projects & Portfolio</h3>
+
+          <div class="project">
+            <div class="project-title">
+              Honey Child Meals - E-commerce Platform
+            </div>
+            <div class="project-tech">
+              React, TypeScript, Vite, Tailwind CSS, Node.js, Express, MongoDB,
+              Stripe, Auth0
+            </div>
+            <div class="project-description">
+              E-commerce solution for meal delivery service with user
+              authentication, payment processing, and order management features.
+            </div>
+          </div>
+
+          <div class="project">
+            <div class="project-title">
+              AirTemp Lubbock - HVAC Company Website
+            </div>
+            <div class="project-tech">
+              WordPress, Custom Theme Development, SEO Optimization
+            </div>
+            <div class="project-description">
+              Professional website for local HVAC company with service booking,
+              customer testimonials, and lead generation features.
+            </div>
+          </div>
+
+          <div class="project">
+            <div class="project-title">The Socialite Salon - Salon Website</div>
+            <div class="project-tech">
+              Webflow, Custom Design, Booking Integration
+            </div>
+            <div class="project-description">
+              Salon website with appointment booking system, service showcase,
+              and elegant design.
+            </div>
+          </div>
+
+          <div class="project">
+            <div class="project-title">
+              Easy Thoughts - Mental Health Services Platform
+            </div>
+            <div class="project-tech">
+              WordPress, Custom Development, HIPAA Compliance
+            </div>
+            <div class="project-description">
+              Healthcare website for mental health services with secure patient
+              portal and appointment scheduling.
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Technical Skills</h3>
+          <div class="skills-grid">
+            <div class="skill-category">
+              <h4>Frontend Technologies</h4>
+              <ul class="skill-list">
+                <li>React.js</li>
+                <li>JavaScript (ES6+)</li>
+                <li>TypeScript</li>
+                <li>HTML5, CSS3, Tailwind CSS</li>
+                <li>Responsive Design</li>
+              </ul>
+            </div>
+
+            <div class="skill-category">
+              <h4>Backend & Database</h4>
+              <ul class="skill-list">
+                <li>Node.js & Express.js</li>
+                <li>Basic Laravel (PHP)</li>
+                <li>MongoDB & PostgreSQL</li>
+                <li>RESTful APIs</li>
+                <li>Basic GraphQL</li>
+              </ul>
+            </div>
+
+            <div class="skill-category">
+              <h4>Tools & Platforms</h4>
+              <ul class="skill-list">
+                <li>AWS (S3, basic EC2)</li>
+                <li>Firebase/Supabase</li>
+                <li>Git & GitHub</li>
+                <li>Stripe Payment Processing</li>
+                <li>Auth0 Authentication</li>
+              </ul>
+            </div>
+
+            <div class="skill-category">
+              <h4>Other Technologies</h4>
+              <ul class="skill-list">
+                <li>WordPress & Webflow</li>
+                <li>Elasticsearch (basic)</li>
+                <li>JWT & API Security</li>
+                <li>Vite, Webpack</li>
+                <li>Docker (basic)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Education</h3>
+          <div class="education">
+            <div class="education-header">
+              <div>
+                <span class="education-degree">Full Stack Javascript Software Developer</span>
+                <span class="education-school">- Austin Coding Academy</span>
+              </div>
+              <span class="education-date">Graduated 2023</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Professional Approach</h3>
+          <p>
+            Eager to learn and grow as a developer with a strong work ethic and
+            attention to detail. Committed to writing clean, maintainable code
+            and collaborating effectively with development teams. Passionate
+            about staying current with emerging technologies and contributing to
+            meaningful projects.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
